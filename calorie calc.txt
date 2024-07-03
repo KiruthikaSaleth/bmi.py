@@ -1,0 +1,105 @@
+class Male:
+    def __init__(self):
+        self.age=int(input("Enter the age :"))
+        self.height=float(input("Enter the height in cm :"))
+        self.weight=float(input("Enter the weight in kg:"))
+    def calculatebmr1(self):
+        self.bmr=(10*self.weight)+(6.25*self.height)-(5*self.age)+5
+    def calculateamr1(self):
+        print("Enter how active you are???")
+        print("1.Sedentary level(no excercise)")
+        print("2.Lightly active")
+        print("3.Moderately active")
+        print("4.Active")
+        print("5.Very active")
+        n=int(input("Enter the choice :"))
+        if(n==1):
+            self.amr=self.bmr*1.2
+        if(n==2):
+            self.amr=self.bmr*1.375
+        if(n==3):
+            self.amr=self.bmr*1.55
+        if(n==4):
+            self.amr=self.bmr*1.725
+        if(n==5):
+            self.amr=self.bmr*1.9
+    def display1(self):
+        print("*********************************************************************************************************")
+        print("  MIFFLIN ST.JEOR   FORMULA   BASED   CALAORIE TRACKER")
+        print("*********************************************************************************************************")
+        print(" BASAL METABOLIC RATE OF YOUR BODY   :",round(self.bmr),"kcal")
+        print(" ACTIVE METABOLIC RATE OF YOUR BODY  :",round(self.amr),"kcal")
+        print("*********************************************************************************************************")
+        print(" * YOUR BODY WILL BURN ",round(self.bmr),"kcal EACH DAY BY PERFORM NECESSARY FUNCTIONS.")
+        print(" * YOU BURN",round(self.amr),"kcal EVERYDAY BY INVOLVING IN EXTERNAL ACTIVITIES SUCH AS EXERCISE etc" )
+        print("*********************************************************************************************************")
+        print("THE CALORIE CALCULATOR ESTIMATES THE AMOUNT OF DAILY CALORIES ONE NEEDS TO MAINTAIN EXISTING BODY WEIGHT")
+        print("WEIGHT GAIN       : YOU NEED TO GAIN",round((self.amr+500)),"kcal")
+        print("MILD WEIGHT GAIN  : YOU NEED TO GAIN",round((self.amr+250)),"kcal")
+        print("MAINTAIN WEIGHT   : YOU NEED TO MAINTAIN",round((self.amr)),"kcal")
+        print("MILD WEIGHT LOSS  : YOU NEED TO LOSS",round((self.amr-250)),"kcal")
+        print("WEIGHT LOSS       : YOU NEED TO LOSS",round((self.amr-500)),"kcal")
+        print("DAILY CALORIE ESTIMATES TO GAIN, MAINTAIN (or) LOSE WEIGHT")
+        print("**********************************************************************************************************")
+class Female:
+    def __init__(self):
+        self.age=int(input("Enter the age :"))
+        self.height=float(input("Enter the height in cm :"))
+        self.weight=float(input("Enter the weight in kg :"))
+    def calculatebmr2(self):
+        self.bmr=(10*self.weight)+(6.25*self.height)-(5*self.age)-161
+    def calculateamr2(self):
+        print("Enter how active you are???")
+        print("1.Sedentary level(no excercise")
+        print("2.Lightly active")
+        print("3.Moderately active")
+        print("4.Active")
+        print("5.Very active")
+        n=int(input("Enter the choice :"))
+        if(n==1):
+            self.amr=self.bmr*1.2
+        if(n==2):
+            self.amr=self.bmr*1.375
+        if(n==3):
+            self.amr=self.bmr*1.55
+        if(n==4):
+            self.amr=self.bmr*1.725
+        if(n==5):
+            self.amr=self.bmr*1.9
+    def display2(self):
+        print("*********************************************************************************************************")
+        print("  MIFFLIN ST.JEOR   FORMULA   BASED   CALAORIE TRACKER")
+        print("*********************************************************************************************************")
+        print(" BASAL METABOLIC RATE OF YOUR BODY   :",round(self.bmr),"kcal")
+        print(" ACTIVE METABOLIC RATE OF YOUR BODY  :",round(self.amr),"kcal")
+        print("*********************************************************************************************************")
+        print(" * YOUR BODY WILL BURN ",round(self.bmr),"kcal EACH DAY BY PERFORM NECESSARY FUNCTIONS.")
+        print(" * YOU BURN",round(self.amr),"kcal EVERYDAY BY INVOLVING IN EXTERNAL ACTIVITIES SUCH AS EXERCISE etc" )
+        print("*********************************************************************************************************")
+        print("THE CALORIE CALCULATOR ESTIMATES THE AMOUNT OF DAILY CALORIES ONE NEEDS TO MAINTAIN EXISTING BODY WEIGHT")
+        print("WEIGHT GAIN       : YOU NEED TO GAIN",round((self.amr+500)),"kcal")
+        print("MILD WEIGHT GAIN  : YOU NEED TO GAIN",round((self.amr+250)),"kcal")
+        print("MAINTAIN WEIGHT   : YOU NEED TO MAINTAIN",round((self.amr)),"kcal")
+        print("MILD WEIGHT LOSS  : YOU NEED TO LOSS",round((self.amr-250)),"kcal")
+        print("WEIGHT LOSS       : YOU NEED TO LOSS",round((self.amr-500)),"kcal")
+        print("DAILY CALORIE ESTIMATES TO GAIN, MAINTAIN (or) LOSE WEIGHT")
+        print("**********************************************************************************************************")
+#object created for male and female class to call the function
+print("select your choice")
+print("1.calculate amr and bmr for men")
+print("2.calculate amr and bmr for women")
+n=int(input("Enter the choice :"))
+if(n==1):
+    print("CALCUCLATE BMR AND AMR FOR MALE")
+    m1=Male()
+    m1.calculatebmr1()
+    m1.calculateamr1()
+    m1.display1()
+elif(n==2):
+    print("CALCULATE BMR AND AMR FOR FEMALE")
+    f1=Female()
+    f1.calculatebmr2()
+    f1.calculateamr2()
+    f1.display2()
+else:
+    print("Enter the valid choice...")
